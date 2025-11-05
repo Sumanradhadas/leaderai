@@ -1,0 +1,86 @@
+Create a single-page campaign site where fans can generate AI pictures with a specific political leader (Mr. X).
+Each site will be personalized for a particular leader — using their name, slogan, party colors, and banners — but the structure and functionality remain the same.
+
+User Experience Flow
+
+Landing Page:
+
+Looks like Mr. X’s official political campaign page.
+
+Includes banner, slogan, colors, and branding related to Mr. X.
+
+Create Picture Section:
+
+Users can upload their own photo.
+
+After uploading, they select from available templates featuring Mr. X.
+
+Once a template is chosen, the system sends the user photo, template main image, and prompt to the Gemini 2.5 Flash API to generate the final image.
+
+The generated image will automatically crop white borders (with a 4-inch white margin included as per the prompt).
+
+Users can download the image and share it on social media with suggested captions and hashtags.
+
+Token System:
+
+Each image generation costs 10 tokens.
+
+Users don’t pay directly — tokens are pre-purchased by Mr. X from the admin.
+
+Tokens reduce automatically with every generation.
+
+Token balance and usage are managed only from the admin panel (not editable from frontend).
+
+Admin Panel (Password Protected)
+
+Accessible only by admin (me). Features include:
+
+Token Management
+
+Set total tokens available for the campaign site.
+
+Each image generation automatically deducts 10 tokens.
+
+Token usage logs are saved securely (non-editable from frontend).
+
+Content Management
+
+Update or replace Mr. X’s photos, logos, banners, slogans, or color theme.
+
+Modify any text, images, or visual assets directly from the admin panel.
+
+Template Management
+
+Upload or delete templates for the site.
+
+Each template includes:
+
+Template name
+
+Template main image
+
+Template thumbnail
+
+Template prompt (for generation)
+
+Templates and data can be stored either in a private GitHub repository (via PAT) or locally on the frontend — whichever is easier and more secure.
+
+Generation Records
+
+Every generated image (with timestamp, template used, and token usage) is logged automatically.
+
+All records are saved in the private GitHub repo for tracking and audit purposes.
+
+Technical Details
+
+AI Model: Gemini 2.5 Flash API (for image generation).
+
+Frontend: Clean, campaign-style single-page layout.
+
+Backend: Handles image uploads, API calls, token deduction, and GitHub storage integration.
+
+Storage:
+
+All generated images and generation records stored in GitHub private repo (via PAT).
+
+Optionally store or cache data locally for performance.
